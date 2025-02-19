@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Dq50WhOeVsSRNH1m2id2QsXcLIIdF1hHXkdI6hh8FCg=",
+  "Hash": "LWkjS94YOcnxOxawI3743v76URMdqUVa6KJRrG54UAY=",
   "Source": "PartnerProject",
   "BasePath": "_content/PartnerProject",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "PartnerProject\\wwwroot",
       "Source": "PartnerProject",
-      "ContentRoot": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\",
       "BasePath": "_content/PartnerProject",
       "Pattern": "**"
     }
@@ -773,10 +773,10 @@
       "OriginalItemSpec": "C:\\Users\\urmib\\.nuget\\packages\\microsoft.fluentui.aspnetcore.components\\4.11.5\\staticwebassets\\Microsoft.FluentUI.AspNetCore.Components.q21vm7bk8w.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json",
+      "Identity": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json",
       "SourceId": "PartnerProject",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\jsmodules\\",
+      "ContentRoot": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\jsmodules\\",
       "BasePath": "_content/PartnerProject",
       "RelativePath": "PartnerProject.modules.json",
       "AssetKind": "Build",
@@ -794,10 +794,10 @@
       "OriginalItemSpec": "obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json"
     },
     {
-      "Identity": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css",
+      "Identity": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css",
       "SourceId": "PartnerProject",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/PartnerProject",
       "RelativePath": "PartnerProject#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -812,13 +812,13 @@
       "Integrity": "Cd9S5lUtr5lTGiHEJmHbRH4t2/2IEDvifB9ETIV+JAk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css"
+      "OriginalItemSpec": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css"
     },
     {
-      "Identity": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\app.css",
       "SourceId": "PartnerProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\",
       "BasePath": "_content/PartnerProject",
       "RelativePath": "app#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -836,10 +836,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\favicon.ico",
       "SourceId": "PartnerProject",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\",
       "BasePath": "_content/PartnerProject",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -2496,7 +2496,7 @@
     },
     {
       "Route": "app.css",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\app.css",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2533,7 +2533,7 @@
     },
     {
       "Route": "app.kwazt7t2v0.css",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\app.css",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2578,7 +2578,7 @@
     },
     {
       "Route": "favicon.a8m5cweeeb.ico",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2623,7 +2623,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2660,7 +2660,7 @@
     },
     {
       "Route": "PartnerProject.modules.json",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\jsmodules\\jsmodules.build.manifest.json",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2697,7 +2697,7 @@
     },
     {
       "Route": "PartnerProject.styles.css",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2738,7 +2738,7 @@
     },
     {
       "Route": "PartnerProject.tnv30r1bl8.styles.css",
-      "AssetFile": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css",
+      "AssetFile": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PartnerProject.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {

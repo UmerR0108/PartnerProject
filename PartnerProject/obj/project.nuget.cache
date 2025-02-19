@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lx8dnRK3ZS0=",
+  "dgSpecHash": "U8rnggSekO4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\PartnerProject.csproj",
+  "projectFilePath": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\PartnerProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\urmib\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.13\\microsoft.aspnetcore.authorization.8.0.13.nupkg.sha512",
     "C:\\Users\\urmib\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.13\\microsoft.aspnetcore.components.8.0.13.nupkg.sha512",

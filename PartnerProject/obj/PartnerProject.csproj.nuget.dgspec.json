@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\urmib\\source\\repos\\PartnerProject\\PartnerProject.csproj": {}
+    "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\PartnerProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\urmib\\source\\repos\\PartnerProject\\PartnerProject.csproj": {
+    "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\PartnerProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\PartnerProject.csproj",
+        "projectUniqueName": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\PartnerProject.csproj",
         "projectName": "PartnerProject",
-        "projectPath": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\PartnerProject.csproj",
+        "projectPath": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\PartnerProject.csproj",
         "packagesPath": "C:\\Users\\urmib\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\urmib\\source\\repos\\PartnerProject\\obj\\",
+        "outputPath": "C:\\Users\\urmib\\OneDrive\\Documents\\Github\\PartnerProject\\PartnerProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\vsss\\NuGetPackages"

@@ -1,6 +1,64 @@
 ﻿@page "/quiz"
+<FluentCard>
+    <FluentTypography variant="h2">Quiz Game</FluentTypography>
 
-<PageTitle>Quiz</PageTitle>
+    @if (currentQuestionIndex < questions.Count)
+    {
+        <FluentTypography variant="h4">@questions[currentQuestionIndex].Question</FluentTypography>
 
-<h1>Quiz time!</h1>
+        <FluentRadioGroup @bind-Value="selectedAnswer">
+            @foreach (var answer in questions[currentQuestionIndex].Options)
+            {
+                <FluentRadio value="@answer">@answer</FluentRadio>
+            }
+        </FluentRadioGroup>
 
+        <FluentButton OnClick="SubmitAnswer">Submit</FluentButton>
+
+        @if (isAnswerCorrect.HasValue)
+        {
+            <FluentBadge>
+                @(isAnswerCorrect.Value ? "✅ Correct!" : "❌ Incorrect")
+            </FluentBadge>
+        }
+    }
+    else
+    {
+        <FluentTypography variant="h3">Quiz Completed!</FluentTypography>
+        <FluentButton OnClick="RestartQuiz">Restart</FluentButton>
+    }
+</FluentCard>
+
+@code {
+    private int currentQuestionIndex = 0;
+    private string selectedAnswer = "";
+    private bool? isAnswerCorrect = null;
+
+    private List<QuestionModel> questions = new()
+    {
+        new QuestionModel { Question = "What is the capital of France?", Options = new List<string> { "Paris", "Berlin", "Madrid", "Rome" }, CorrectAnswer = "Paris" },
+        new QuestionModel { Question = "Which planet is known as the Red Planet?", Options = new List<string> { "Mars", "Venus", "Jupiter", "Saturn" }, CorrectAnswer = "Mars" },
+        new QuestionModel { Question = "What is 2 + 2?", Options = new List<string> { "3", "4", "5", "6" }, CorrectAnswer = "4" }
+    };
+
+    private void SubmitAnswer()
+    {
+        isAnswerCorrect = selectedAnswer == questions[currentQuestionIndex].CorrectAnswer;
+        currentQuestionIndex++;
+        selectedAnswer = "";
+    }
+
+    private void RestartQuiz()
+    {
+        currentQuestionIndex = 0;
+        isAnswerCorrect = null;
+        selectedAnswer = "";
+    }
+
+    private class QuestionModel
+    {
+        public string Question { get; set; }
+        public List<string> Options { get; set; }
+        public string CorrectAnswer { get; set; }
+    }
+}
