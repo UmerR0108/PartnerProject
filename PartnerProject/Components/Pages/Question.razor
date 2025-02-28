@@ -1,0 +1,33 @@
+﻿@using PartnerProject.Models
+@* question.razor *@
+@* @page "/questions" -- Remove if not needed *@
+
+@if (CurrentQuestion != null)
+{
+    <div>
+        <h3>@CurrentQuestion.Question</h3>
+
+        <h3>Question amount: @CurrentQuestion.amount</h3>
+    </div>
+
+    <ul>
+        @if (CurrentQuestion.Choices != null)
+        {
+            @foreach (var choice in CurrentQuestion.Choices)
+            {
+                <li>@choice</li>
+                <FluentDivider></FluentDivider>
+            }
+        }
+    </ul>
+}
+else
+{
+    <p>No question data available.</p>
+}
+
+@code {
+    
+    [CascadingParameter]
+    public MultipleChoiceQuestion CurrentQuestion { get; set; }
+}

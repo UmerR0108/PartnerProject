@@ -1,64 +1,332 @@
 ﻿@page "/quiz"
-<FluentCard>
-    <FluentTypography variant="h2">Quiz Game</FluentTypography>
+@rendermode InteractiveServer
+@using PartnerProject.Models
+<p>Hello</p>
+<h3>Random Quiz</h3>
 
-    @if (currentQuestionIndex < questions.Count)
-    {
-        <FluentTypography variant="h4">@questions[currentQuestionIndex].Question</FluentTypography>
+<p>Index: @randomIndex</p>
 
-        <FluentRadioGroup @bind-Value="selectedAnswer">
-            @foreach (var answer in questions[currentQuestionIndex].Options)
-            {
-                <FluentRadio value="@answer">@answer</FluentRadio>
-            }
-        </FluentRadioGroup>
-
-        <FluentButton OnClick="SubmitAnswer">Submit</FluentButton>
-
-        @if (isAnswerCorrect.HasValue)
-        {
-            <FluentBadge>
-                @(isAnswerCorrect.Value ? "✅ Correct!" : "❌ Incorrect")
-            </FluentBadge>
-        }
-    }
-    else
-    {
-        <FluentTypography variant="h3">Quiz Completed!</FluentTypography>
-        <FluentButton OnClick="RestartQuiz">Restart</FluentButton>
-    }
-</FluentCard>
-
-@code {
-    private int currentQuestionIndex = 0;
-    private string selectedAnswer = "";
-    private bool? isAnswerCorrect = null;
-
-    private List<QuestionModel> questions = new()
-    {
-        new QuestionModel { Question = "What is the capital of France?", Options = new List<string> { "Paris", "Berlin", "Madrid", "Rome" }, CorrectAnswer = "Paris" },
-        new QuestionModel { Question = "Which planet is known as the Red Planet?", Options = new List<string> { "Mars", "Venus", "Jupiter", "Saturn" }, CorrectAnswer = "Mars" },
-        new QuestionModel { Question = "What is 2 + 2?", Options = new List<string> { "3", "4", "5", "6" }, CorrectAnswer = "4" }
-    };
-
-    private void SubmitAnswer()
-    {
-        isAnswerCorrect = selectedAnswer == questions[currentQuestionIndex].CorrectAnswer;
-        currentQuestionIndex++;
-        selectedAnswer = "";
-    }
-
-    private void RestartQuiz()
-    {
-        currentQuestionIndex = 0;
-        isAnswerCorrect = null;
-        selectedAnswer = "";
-    }
-
-    private class QuestionModel
-    {
-        public string Question { get; set; }
-        public List<string> Options { get; set; }
-        public string CorrectAnswer { get; set; }
-    }
+@if (Questions[randomIndex] != null)
+{
+    <CascadingValue Value="Questions[randomIndex]">
+        <Question />
+    </CascadingValue>
 }
+
+<FluentButton @onclick="click" >Next</FluentButton>
+@code {
+    private Random rand = new Random();
+    private int randomIndex;
+    private int amount = 0;
+    private List<MultipleChoiceQuestion> Questions = new();
+    public void click() {
+        Questions.Remove(Questions[randomIndex]);
+        GenerateRandomIndex();
+        UpdateAmount();
+
+    }
+
+    protected override void OnInitialized()
+    {
+        // Initialize the random index once
+        reset();
+        GenerateRandomIndex();
+    }
+    private void reset() {
+        amount = 0;
+
+        Questions.AddRange(new List<MultipleChoiceQuestion>
+            {
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the capital of Germany?",
+                    Choices = ["Berlin", "Munich", "Hamburg", "Frankfurt"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which planet is known as the Red Planet?",
+                    Choices = ["Mars", "Venus", "Jupiter", "Mercury"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Who wrote 'To Kill a Mockingbird'?",
+                    Choices = ["Harper Lee", "J.K. Rowling", "Ernest Hemingway", "Mark Twain"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the largest ocean on Earth?",
+                    Choices = ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the chemical symbol for gold?",
+                    Choices = ["Au", "Ag", "Pb", "Fe"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Who painted the Mona Lisa?",
+                    Choices = ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Claude Monet"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the capital of Canada?",
+                    Choices = ["Ottawa", "Toronto", "Vancouver", "Montreal"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the hardest natural substance on Earth?",
+                    Choices = ["Diamond", "Gold", "Quartz", "Iron"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which gas do plants absorb from the atmosphere?",
+                    Choices = ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "How many continents are there on Earth?",
+                    Choices = ["Seven", "Five", "Six", "Eight"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the tallest mountain in the world?",
+                    Choices = ["Mount Everest", "K2", "Mount Kilimanjaro", "Denali"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Who discovered gravity?",
+                    Choices = ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which is the longest river in the world?",
+                    Choices = ["Nile", "Amazon", "Yangtze", "Mississippi"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the capital of Italy?",
+                    Choices = ["Rome", "Venice", "Milan", "Naples"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the chemical formula for water?",
+                    Choices = ["H2O", "CO2", "O2", "H2SO4"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which animal is known as the 'King of the Jungle'?",
+                    Choices = ["Lion", "Tiger", "Elephant", "Leopard"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Who developed the theory of relativity?",
+                    Choices = ["Albert Einstein", "Isaac Newton", "Stephen Hawking", "Nikola Tesla"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which country is famous for the Great Wall?",
+                    Choices = ["China", "Japan", "India", "Russia"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the fastest land animal?",
+                    Choices = ["Cheetah", "Lion", "Horse", "Greyhound"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which planet is closest to the sun?",
+                    Choices = ["Mercury", "Venus", "Earth", "Mars"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "How many legs does a spider have?",
+                    Choices = ["Eight", "Six", "Ten", "Four"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the main ingredient in guacamole?",
+                    Choices = ["Avocado", "Tomato", "Onion", "Garlic"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which country is known as the Land of the Rising Sun?",
+                    Choices = ["Japan", "China", "South Korea", "Thailand"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the square root of 64?",
+                    Choices = ["8", "6", "7", "10"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the name of the fairy in Peter Pan?",
+                    Choices = ["Tinker Bell", "Wendy", "Minnie", "Daisy"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which organ pumps blood through the body?",
+                    Choices = ["Heart", "Liver", "Lungs", "Brain"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which is the largest planet in our solar system?",
+                    Choices = ["Jupiter", "Saturn", "Neptune", "Earth"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Who was the first president of the United States?",
+                    Choices = ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "What is the freezing point of water in Celsius?",
+                    Choices = ["0", "-10", "32", "100"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "How many bones are in the human body?",
+                    Choices = ["206", "156", "250", "180"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which element does the chemical symbol 'O' represent?",
+                    Choices = ["Oxygen", "Gold", "Osmium", "Hydrogen"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Which sport is known as the 'king of sports'?",
+                    Choices = ["Soccer", "Basketball", "Tennis", "Baseball"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                },
+
+            new MultipleChoiceQuestion
+                {
+                    Question = "Who is the author of Harry Potter?",
+                    Choices = ["J.K. Rowling", "J.R.R. Tolkien", "George R.R. Martin", "Suzanne Collins"],
+                    QuestionAnswer = 0,
+                    amount = 0
+                }
+
+        });
+    }
+    private void UpdateAmount()
+    {
+        amount += 1;
+        Questions[randomIndex].amount = amount;
+
+    }
+    private void GenerateRandomIndex()
+    {
+        int newIndex = 0;
+        do
+        {
+            newIndex = rand.Next(0, Questions.Count);
+        } while (newIndex == randomIndex);
+
+        randomIndex = newIndex;
+        Console.WriteLine($"New randomIndex = {randomIndex}");
+
+        StateHasChanged();
+    }
+
+    
+
+    
+
+}
+
+
