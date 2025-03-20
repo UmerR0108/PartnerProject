@@ -1,25 +1,47 @@
 ﻿@using PartnerProject.Models
 @* question.razor *@
 @* @page "/questions" -- Remove if not needed *@
-
+ @inject QuizState QuizState
 @if (CurrentQuestion != null)
 {
-    <div>
-        <h3>@CurrentQuestion.Question</h3>
+    <div style="display: inline-block; width: fit-content; border: thick">
 
-        <h3>Question amount: @CurrentQuestion.amount</h3>
+
+        <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 50px;">
+            <span style="font-size: 1.75rem; font-weight: bold; margin-right: 15px;">@CurrentQuestion.Question</span>
+            <span style="font-size: 1.75rem; font-weight: bold;">Question number: @CurrentQuestion.amount</span>
+
+        </div>
+
+
+
+        <ul>
+            @if (CurrentQuestion.Choices != null)
+            {
+
+
+                
+
+                <FluentRadioGroup @bind-Value="QuizState.SelectedAnswer" key="@Guid.NewGuid()" style="display: flex; flex-direction: row; gap: 5px; margin-bottom: 20px;">
+                    @foreach (var (choice, index) in CurrentQuestion.Choices.Select((choice, index) => (choice, index)))
+                    {
+                        <FluentRadio Value="@index" @onclick="() => QuizState.SetAnswer(index)">@choice</FluentRadio>
+                    }
+                </FluentRadioGroup>
+
+
+
+
+
+            }
+
+            <CascadingValue Value="selectedAnswer">
+            </CascadingValue>
+
+        </ul>
     </div>
 
-    <ul>
-        @if (CurrentQuestion.Choices != null)
-        {
-            @foreach (var choice in CurrentQuestion.Choices)
-            {
-                <li>@choice</li>
-                <FluentDivider></FluentDivider>
-            }
-        }
-    </ul>
+
 }
 else
 {
@@ -27,7 +49,12 @@ else
 }
 
 @code {
-    
+
+    private int selectedAnswer = -1; // Default value indicating no selection
+
+
+
     [CascadingParameter]
     public MultipleChoiceQuestion CurrentQuestion { get; set; }
+    public int randomIndex { get; set;  }
 }
